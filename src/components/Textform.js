@@ -20,11 +20,12 @@ export default function Textform(props) {
     }
     const remospecialChracter = ()=>{
         
-        var str = text;
+        let str = text;
         str.replace(/[^a-zA-Z ]/g, "");
         setText(str.replace(/[^a-zA-Z ]/g, ""));
         
     }
+    
   return (
       <>
     <div className="container">
@@ -33,7 +34,7 @@ export default function Textform(props) {
             <div className="form-group">
                 <textarea className="form-control " placeholder={props.place} id="exampleFormControlTextarea1" rows="8" value={text} onChange={handleOnChange}></textarea>
             </div>
-            <div className="mx-2">
+            <div className="col-8">
             <button className="btn btn-primary" onClick={handleUpClick}>Conver to Upper Case</button> -
             <button className="btn btn-primary" onClick={handleLower}>Covert to lower</button> - 
             <button className="btn btn-primary" onClick={remospecialChracter}>Remove Special Chracter</button> -  
@@ -47,7 +48,7 @@ export default function Textform(props) {
     <div className="container my-2">
         <h1>Your text summary</h1>
         <p className="fw-bold">Words {text.split(" ").length-1} and Chracter {text.length}</p>
-        <p className="fw-bold">Time Reauire to Read {0.08*text.split(" ").length}m</p>
+        <p className="fw-bold">Time Reauire to Read {0.08*(text.split(" ").length-1)} m</p>
         <h2>Preview</h2>
         {text}
     </div>
