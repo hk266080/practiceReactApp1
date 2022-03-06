@@ -15,16 +15,42 @@ export default function Textform(props) {
     {
         setText('');
     }
+    const handleLower = () => {
+        setText(text.toLowerCase())
+    }
+    const remospecialChracter = ()=>{
+        
+        var str = text;
+        str.replace(/[^a-zA-Z ]/g, "");
+        setText(str.replace(/[^a-zA-Z ]/g, ""));
+        
+    }
   return (
-<div>
+      <>
+    <div className="container">
         <form onSubmit={(e) => e.preventDefault()}>
             <h1>{props.heading}</h1>
             <div className="form-group">
-                <textarea className="form-control" placeholder={props.place} id="exampleFormControlTextarea1" rows="8" value={text} onChange={handleOnChange}></textarea>
+                <textarea className="form-control " placeholder={props.place} id="exampleFormControlTextarea1" rows="8" value={text} onChange={handleOnChange}></textarea>
             </div>
-            <button className="btn btn-primary" onClick={handleUpClick}>Conver to Upper Case</button>-
-            <button className="btn btn-danger" onClick={handelRemove}>Remove</button>
+            <div className="mx-2">
+            <button className="btn btn-primary" onClick={handleUpClick}>Conver to Upper Case</button> -
+            <button className="btn btn-primary" onClick={handleLower}>Covert to lower</button> - 
+            <button className="btn btn-primary" onClick={remospecialChracter}>Remove Special Chracter</button> -  
+            <button className="btn btn-danger" onClick={handelRemove}>Remove</button> -
+            
+
+            
+            </div>
         </form>
-</div>
+    </div>
+    <div className="container my-2">
+        <h1>Your text summary</h1>
+        <p className="fw-bold">Words {text.split(" ").length-1} and Chracter {text.length}</p>
+        <p className="fw-bold">Time Reauire to Read {0.08*text.split(" ").length}m</p>
+        <h2>Preview</h2>
+        {text}
+    </div>
+</>
   )
 }
