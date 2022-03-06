@@ -31,12 +31,15 @@ export default function About() {
     <div className="accordion-item" style={myStyle}>
       <h2 className="accordion-header" id="headingOne" style={myStyle}>
         <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style={myStyle}>
-          Accordion Item #1
+          About 
         </button>
       </h2>
       <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style={myStyle}>
         <div className="accordion-body" style={myStyle}>
-          <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          <strong>This is my first ever application</strong> 
+          <p>I have created this application for practice purposes this application might have a lot of errors i will try to improve it more as i will keep learning react my master in the technology will increase.</p>
+          <p>I want you all to support me on my this journey of creating more applications like this.</p>
+          <p>You can suggest me more functionalities to add in this application at <span className='fw-bold'>hassan11903@hotmail.com</span></p>
         </div>
       </div>
     </div>
