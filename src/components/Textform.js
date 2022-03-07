@@ -6,6 +6,7 @@ export default function Textform(props) {
     const handleUpClick = ()=>{
         
         setText(text.toUpperCase());
+        props.alert("Converted to upper case","success");
     }
     const handleOnChange = (event)=>
     {
@@ -14,15 +15,18 @@ export default function Textform(props) {
     const handelRemove = ()=>
     {
         setText('');
+        props.alert("All text removed","danger");
     }
     const handleLower = () => {
         setText(text.toLowerCase())
+        props.alert("All text converted to lower case","success");
     }
     const remospecialChracter = ()=>{
         
         let str = text;
         str.replace(/[^a-zA-Z ]/g, "");
         setText(str.replace(/[^a-zA-Z ]/g, ""));
+        props.alert("Special Chracteres removed","success");
         
     }
       
